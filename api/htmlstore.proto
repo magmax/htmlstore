@@ -1,0 +1,20 @@
+syntax = "proto3";
+option go_package = "github.com/magmax/htmlstore/api";
+
+service HtmlStore {
+    rpc PutHtml(Html) returns (Id);
+    rpc GetHtml(Id) returns (Html);
+    rpc GetTxt(Id) returns (Txt);
+}
+
+message Html {
+    string content = 1;
+}
+
+message Txt {
+    string content = 1;
+}
+
+message Id {
+    string id = 1;
+}
